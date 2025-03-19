@@ -16,7 +16,11 @@ ai_model = GeminiLLM()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "*"],  # Adjust this to restrict allowed origins
+    allow_origins=[
+        "http://localhost:3000",  # Development
+        "https://happy-flower-0c4c73b0f-23.eastus2.6.azurestaticapps.net",  # Production
+        "https://seng401-ajbhug30z-boumsters-projects.vercel.app"  # Vercel
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
